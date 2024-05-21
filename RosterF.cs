@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WH40K_GUI_UAT_MS539_ML
 {
-    public partial class Roster : Form
+    public partial class RosterF : Form
     {
-        public Roster()
+        public RosterF()
         {
             InitializeComponent();
         }
 
         private void addUnitBtn_Click(object sender, EventArgs e)
         {
-            Unit un = new Unit();
+            UnitF un = new UnitF();
             un.ShowDialog();
         }
     }

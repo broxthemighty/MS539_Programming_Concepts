@@ -1,6 +1,6 @@
 ﻿namespace WH40K_GUI_UAT_MS539_ML
 {
-    partial class Unit
+    partial class UnitF
     {
         /// <summary>
         /// Required designer variable.

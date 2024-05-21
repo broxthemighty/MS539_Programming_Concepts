@@ -1,6 +1,6 @@
 ﻿namespace WH40K_GUI_UAT_MS539_ML
 {
-    partial class Roster
+    partial class RosterF
     {
         /// <summary>
         /// Required designer variable.
@@ -106,7 +106,7 @@
             this.addUnitBtn.UseVisualStyleBackColor = true;
             this.addUnitBtn.Click += new System.EventHandler(this.addUnitBtn_Click);
             // 
-            // Roster
+            // RosterF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,8 +119,8 @@
             this.Controls.Add(this.rosterCharactersLbl);
             this.Controls.Add(this.rosterNameTxt);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Roster";
-            this.Text = "Roster";
+            this.Name = "RosterF";
+            this.Text = "RosterF";
             this.ResumeLayout(false);
             this.PerformLayout();
 

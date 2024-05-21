@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WH40K_GUI_UAT_MS539_ML
 {
-    public partial class Unit : Form
+    public partial class UnitF : Form
     {
-        public Unit()
+        public UnitF()
         {
             InitializeComponent();
         }
