@@ -1,2 +1,1 @@
-# MS539_Programming_Concepts
-Repo for UAT MS539 Programming Concepts Class
+# WH40K_GUI_UAT_MS539_ML
