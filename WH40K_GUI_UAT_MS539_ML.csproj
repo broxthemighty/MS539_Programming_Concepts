@@ -53,12 +53,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Roster.xaml.cs">
       <DependentUpon>Roster.xaml</DependentUpon>
     </Compile>
     <Compile Include="Unit.xaml.cs">
       <DependentUpon>Unit.xaml</DependentUpon>
     </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
