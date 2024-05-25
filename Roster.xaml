@@ -14,6 +14,7 @@
         <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
         <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
         <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
