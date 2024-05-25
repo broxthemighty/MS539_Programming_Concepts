@@ -1,25 +1,19 @@
-﻿<Window x:Class="WH40K_GUI_UAT_MS539_ML.MainWindow"
+﻿<Window x:Class="WH40K_GUI_UAT_MS539_ML.Roster"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
         mc:Ignorable="d"
-        Title="Roster" Height="300" Width="600">
+        Title="Roster" Height="400" Width="700">
     <Grid>
-        <Menu>
-            <MenuItem Header="New Roster" Click="newRoster_Click"></MenuItem>
-            <MenuItem Header="Edit">
-                <!--Not sure what I will put in here yet-->
-            </MenuItem>
-            <MenuItem Header="About">
-                <!--Put in description of application, who made it, etc-->
-            </MenuItem>
-            <MenuItem Header="Help">
-                <!--Include link to documentation, maybe post something online if I publish this app-->
-            </MenuItem>
-        </Menu>
-        
+        <TextBox TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add Unit" Width="60" HorizontalAlignment="Left" Margin="620,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
+        <Label Content="Characters" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

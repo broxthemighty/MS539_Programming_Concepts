@@ -53,41 +53,27 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Roster.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Roster.xaml.cs">
+      <DependentUpon>Roster.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Roster.Designer.cs">
-      <DependentUpon>Roster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Unit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Unit.Designer.cs">
-      <DependentUpon>Unit.cs</DependentUpon>
+    <Compile Include="Unit.xaml.cs">
+      <DependentUpon>Unit.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Roster.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Unit.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -107,12 +93,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Roster.resx">
-      <DependentUpon>Roster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Unit.resx">
-      <DependentUpon>Unit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
