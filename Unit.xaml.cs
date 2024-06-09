@@ -19,8 +19,9 @@ namespace WH40K_GUI_UAT_MS539_ML
     /// </summary>
     public partial class Unit : Window
     {
-       
-        
+
+
+        public string unitName = "";
 
         public Unit()
         {
@@ -36,7 +37,21 @@ namespace WH40K_GUI_UAT_MS539_ML
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //delete this later
+        }
 
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            //put in error checking for unit selection
+
+            //put in switch statement, changing the data in the gui properties based on the selection
+            //this is only for filler dummy data, but will be used later with the api
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Include error checking
+            //See if there are already 3 such units already in the roster
         }
     }
 }

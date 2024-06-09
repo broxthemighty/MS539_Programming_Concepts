@@ -17,6 +17,8 @@ namespace WH40K_GUI_UAT_MS539_ML
     /// <summary>
     /// Interaction logic for Roster.xaml
     /// </summary>
+    
+    //Need to have an X to remove a unit from the roster, with a popup stating the unit name and verifying the user wants to delete it
     public partial class Roster : Window
     {
         public Roster()

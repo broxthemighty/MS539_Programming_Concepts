@@ -30,5 +30,11 @@ namespace WH40K_GUI_UAT_MS539_ML
             Roster newRoster = new Roster();
             newRoster.ShowDialog();
         }
+
+        private void exceptionHandlingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionHandling eh = new ExceptionHandling();
+            eh.ShowDialog();
+        }
     }
 }

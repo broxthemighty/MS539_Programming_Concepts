@@ -8,21 +8,47 @@
         Title="Unit" Height="380" Width="600">
     <Grid>
         <Menu>
-            <TextBox TextWrapping="Wrap" Text="Unit" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="Unit Name" Width="120" Name="unitDisplayName"/>
+            <Button Content="Add Unit" Click="Button_Click"/>
         </Menu>
-        <ListBox x:Name="UnitList" Margin="10,70,10,0" VerticalAlignment="Top">
-            <ListBoxItem>Captain</ListBoxItem>
+        <ListBox x:Name="UnitList" Margin="420,10,10,0" VerticalAlignment="Top" Height="46">
+            <ListBoxItem Selected="ListBoxItem_Selected">Captain</ListBoxItem>
             <ListBoxItem>Apothecary</ListBoxItem>
             <ListBoxItem>Intercessors</ListBoxItem>
             <ListBoxItem>Bladeguard</ListBoxItem>
             <ListBoxItem>Gladiator Lancer</ListBoxItem>
         </ListBox>
         <Label Content="M" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="T" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="SV" HorizontalAlignment="Left" Margin="48,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="T" HorizontalAlignment="Left" Margin="32,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="SV" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top"/>
         <Label Content="W" HorizontalAlignment="Left" Margin="70,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="LD" HorizontalAlignment="Left" Margin="93,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="OC" HorizontalAlignment="Left" Margin="115,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="INV" HorizontalAlignment="Left" Margin="140,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="LD" HorizontalAlignment="Left" Margin="90,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="OC" HorizontalAlignment="Left" Margin="110,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="INV" HorizontalAlignment="Left" Margin="130,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="FNP" HorizontalAlignment="Left" Margin="152,20,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="6" HorizontalAlignment="Left" Margin="12,40,0,0" VerticalAlignment="Top" Name="unitMovement"/>
+        <Label Content="4" HorizontalAlignment="Left" Margin="32,40,0,0" VerticalAlignment="Top" Name="unitToughness"/>
+        <Label Content="3" HorizontalAlignment="Left" Margin="52,40,0,0" VerticalAlignment="Top" Name="unitSave"/>
+        <Label Content="5" HorizontalAlignment="Left" Margin="72,40,0,0" VerticalAlignment="Top" Name="unitWounds"/>
+        <Label Content="6" HorizontalAlignment="Left" Margin="92,40,0,0" VerticalAlignment="Top" Name="unitLeadership"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="112,40,0,0" VerticalAlignment="Top" Name="unitObjectiveControl"/>
+        <Label Content="4" HorizontalAlignment="Left" Margin="134,40,0,0" VerticalAlignment="Top" Name="unitInvulnerableSave"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="156,40,0,0" VerticalAlignment="Top" Name="unitFeelNoPain"/>
+
+        <Label Content="Melee Weapons" HorizontalAlignment="Left" Margin="12,63,0,0" VerticalAlignment="Top"/>
+
+        <TextBox TextWrapping="Wrap" Text="Power Sword" Margin="-170,88,0,0" Width="400" Height="50" VerticalAlignment="Top" Name="unitMeleeWeapons" VerticalScrollBarVisibility="Visible"/>
+
+        <Label Content="Ranged Weapons" HorizontalAlignment="Left" Margin="12,140,0,0" VerticalAlignment="Top"/>
+
+        <TextBox TextWrapping="Wrap" Text="Master Crafted Bolter" Margin="-170,165,0,0" Width="400" Height="50" VerticalAlignment="Top" Name="unitRangedWeapons" VerticalScrollBarVisibility="Visible"/>
+
+        <Label Content="Abilities" HorizontalAlignment="Left" Margin="12,220,0,0" VerticalAlignment="Top"/>
+
+        <TextBox TextWrapping="Wrap" Text="Rites of Battle" Margin="-170,245,0,0" Width="400" Height="50" VerticalAlignment="Top" Name="unitAbilities" VerticalScrollBarVisibility="Visible"/>
+
+        <Label Content="Unit Composition" HorizontalAlignment="Left" Margin="12,300,0,0" VerticalAlignment="Top"/>
+        <Label Content="1 Model" HorizontalAlignment="Left" Margin="110,300,0,0" VerticalAlignment="Top" Name="unitComposition"/>
     </Grid>
 </Window>
