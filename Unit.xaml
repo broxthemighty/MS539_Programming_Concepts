@@ -10,13 +10,14 @@
         <Menu>
             <TextBox TextWrapping="Wrap" Text="Unit Name" Width="120" Name="unitDisplayName"/>
             <Button Content="Add Unit" Click="Button_Click"/>
+            <Button Content="Random Unit" x:Name="randomizerBtn" Click="randomizerBtn_Click"/>
         </Menu>
         <ListBox x:Name="UnitList" Margin="420,10,10,0" VerticalAlignment="Top" Height="46">
-            <ListBoxItem Selected="ListBoxItem_Selected">Captain</ListBoxItem>
+            <!--<ListBoxItem Selected="ListBoxItem_Selected">Captain</ListBoxItem>
             <ListBoxItem>Apothecary</ListBoxItem>
             <ListBoxItem>Intercessors</ListBoxItem>
             <ListBoxItem>Bladeguard</ListBoxItem>
-            <ListBoxItem>Gladiator Lancer</ListBoxItem>
+            <ListBoxItem>Gladiator Lancer</ListBoxItem>-->
         </ListBox>
         <Label Content="M" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
         <Label Content="T" HorizontalAlignment="Left" Margin="32,20,0,0" VerticalAlignment="Top"/>
@@ -50,5 +51,6 @@
 
         <Label Content="Unit Composition" HorizontalAlignment="Left" Margin="12,300,0,0" VerticalAlignment="Top"/>
         <Label Content="1 Model" HorizontalAlignment="Left" Margin="110,300,0,0" VerticalAlignment="Top" Name="unitComposition"/>
+        <Label Content="0" x:Name="randomizerLbl" HorizontalAlignment="Left" Margin="290,-2,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

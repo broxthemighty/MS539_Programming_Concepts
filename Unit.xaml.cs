@@ -27,12 +27,18 @@ namespace WH40K_GUI_UAT_MS539_ML
         {
             InitializeComponent();
             List<string> dummyData = new List<string>();
+            dummyData.Add("StringArrayList");
             dummyData.Add("Captain");
             dummyData.Add("Apothecary");
             dummyData.Add("Intercessors");
             dummyData.Add("Bladeguard");
             dummyData.Add("Gladiator Lancer");
-            UnitList.DataContext = dummyData;
+
+            if (dummyData.Count > 0)
+            {
+                UnitList.ItemsSource = dummyData;
+            }
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,6 +58,12 @@ namespace WH40K_GUI_UAT_MS539_ML
         {
             //Include error checking
             //See if there are already 3 such units already in the roster
+        }
+
+        private void randomizerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RandomNumber rn = new RandomNumber(1, 150);
+            randomizerLbl.Content = rn.getRandomNumber().ToString();
         }
     }
 }
