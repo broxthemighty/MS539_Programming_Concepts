@@ -9,7 +9,7 @@
     <Grid>
         <Menu>
             <TextBox TextWrapping="Wrap" Text="" Width="120" x:Name="unitDisplayName"/>
-            <Button x:Name="addUnitBtn" Content="Add Unit" Click="Button_Click"/>
+            <Button x:Name="addUnitBtn" Content="Add Unit" Click="addUnitBtn_Click"/>
             <Button Content="Random Unit" x:Name="randomizerBtn" Click="randomizerBtn_Click"/>
         </Menu>
         <ListBox x:Name="UnitList" Margin="420,10,10,0" VerticalAlignment="Top" Height="46" SelectionChanged="UnitList_SelectionChanged"></ListBox>

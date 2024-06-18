@@ -28,6 +28,7 @@ namespace WH40K_GUI_UAT_MS539_ML
         public Unit()
         {
             InitializeComponent();
+
             List<string> dummyData = new List<string>();
             dummyData.Add("StringArrayList");
             dummyData.Add("Captain");
@@ -160,24 +161,16 @@ namespace WH40K_GUI_UAT_MS539_ML
             unitFeelNoPain.Refresh();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void addUnitBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Include error checking
-            //See if there are already 3 such units already in the roster
+            //Add logic to see if there are already 3 such units already in the roster
+            //Maybe another function or method
         }
 
         private void randomizerBtn_Click(object sender, RoutedEventArgs e)
         {
             RandomNumber rn = new RandomNumber(1, 150);
             randomizerLbl.Content = rn.getRandomNumber().ToString();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        void OnPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
         private void UnitList_SelectionChanged(object sender, SelectionChangedEventArgs e)
