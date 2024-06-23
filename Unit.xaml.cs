@@ -22,15 +22,16 @@ namespace WH40K_GUI_UAT_MS539_ML
     public partial class Unit : Window
     {
 
-
+        string errorMessage = "The maximum amount of that unit in the roster has been reached.";
         public string unitName = "";
+        List<UnitData> ud = new List<UnitData>();
+        List<string> unitCount = new List<string>();
 
         public Unit()
         {
             InitializeComponent();
 
             List<string> dummyData = new List<string>();
-            dummyData.Add("StringArrayList");
             dummyData.Add("Captain");
             dummyData.Add("Apothecary");
             dummyData.Add("Intercessors");
@@ -99,6 +100,7 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "1";
                     unitInvulnerableSave.Content = "1";
                     unitFeelNoPain.Content = "1";
+                    unitModelCount.Content = "1";
                     break;
                 case "Captain":
                     unitMovement.Content = "6";
@@ -109,6 +111,8 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "1";
                     unitInvulnerableSave.Content = "4";
                     unitFeelNoPain.Content = "-";
+                    unitType.Content = "Infantry Leader";
+                    unitModelCount.Content = "1";
                     break;
                 case "Apothecary":
                     unitMovement.Content = "6";
@@ -119,6 +123,8 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "1";
                     unitInvulnerableSave.Content = "-";
                     unitFeelNoPain.Content = "-";
+                    unitType.Content = "Infantry Leader";
+                    unitModelCount.Content = "1";
                     break;
                 case "Intercessors":
                     unitMovement.Content = "6";
@@ -129,6 +135,8 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "2";
                     unitInvulnerableSave.Content = "-";
                     unitFeelNoPain.Content = "-";
+                    unitType.Content = "Infantry BattleLine";
+                    unitModelCount.Content = "5";
                     break;
                 case "Bladeguard":
                     unitMovement.Content = "6";
@@ -139,6 +147,8 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "1";
                     unitInvulnerableSave.Content = "4";
                     unitFeelNoPain.Content = "-";
+                    unitType.Content = "Infantry Other";
+                    unitModelCount.Content = "3";
                     break;
                 case "Gladiator Lancer":
                     unitMovement.Content = "10";
@@ -149,6 +159,8 @@ namespace WH40K_GUI_UAT_MS539_ML
                     unitObjectiveControl.Content = "3";
                     unitInvulnerableSave.Content = "-";
                     unitFeelNoPain.Content = "-";
+                    unitType.Content = "Vehicle Other";
+                    unitModelCount.Content = "1";
                     break;
             }
             unitMovement.Refresh();
@@ -159,12 +171,53 @@ namespace WH40K_GUI_UAT_MS539_ML
             unitObjectiveControl.Refresh();
             unitInvulnerableSave.Refresh();
             unitFeelNoPain.Refresh();
+            unitType.Refresh();
+            unitModelCount.Refresh();
         }
 
         private void addUnitBtn_Click(object sender, RoutedEventArgs e)
         {
             //Add logic to see if there are already 3 such units already in the roster
             //Maybe another function or method
+            UnitData singleUnit = new UnitData(
+                unitDisplayName.Text.ToString(), 
+                unitType.Content.ToString(), 
+                unitMovement.Content.ToString(), 
+                unitToughness.Content.ToString(), 
+                unitWounds.Content.ToString(), 
+                unitSave.Content.ToString(),
+                unitLeadership.Content.ToString(),
+                unitObjectiveControl.Content.ToString(), 
+                unitInvulnerableSave.Content.ToString(),
+                unitFeelNoPain.Content.ToString(),
+                unitModelCount.Content.ToString()
+                );
+
+            int count = 0;
+                foreach (string n in unitCount)
+                {
+                    if (n == unitDisplayName.Text.ToString())
+                    {
+                        count++;
+                    }
+                }
+
+                if (unitType.Content.ToString().Contains("BattleLine") & (count < 6))
+                {
+                    unitCount.Add(unitDisplayName.Text.ToString());
+                    ud.Add(singleUnit);
+                }
+                else if (count < 3)
+                {
+                    unitCount.Add(unitDisplayName.Text.ToString());
+                    ud.Add(singleUnit);
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
+            
+            
         }
 
         private void randomizerBtn_Click(object sender, RoutedEventArgs e)

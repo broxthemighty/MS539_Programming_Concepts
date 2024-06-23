@@ -56,6 +56,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UnitData.cs" />
     <Compile Include="ExceptionHandling.xaml.cs">
       <DependentUpon>ExceptionHandling.xaml</DependentUpon>
     </Compile>

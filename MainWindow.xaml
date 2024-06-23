@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Menu>
+        <Menu x:Name="MainWindowGrid">
             <MenuItem Header="New Roster" Click="newRoster_Click"></MenuItem>
             <MenuItem Header="Edit">
                 <!--Not sure what I will put in here yet-->
@@ -18,7 +18,7 @@
             <MenuItem Header="Help">
                 <!--Include link to documentation, maybe post something online if I publish this app-->
             </MenuItem>
-            <Button Content="Exception Handling" Name="exceptionHandlingBtn" Click="exceptionHandlingBtn_Click"/>
+            <Button Content="Exception Handling" Name="exceptionHandlingBtn" Click="exceptionHandlingBtn_Click" Visibility="Hidden"/>
         </Menu>
         
 

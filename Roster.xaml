@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
         mc:Ignorable="d"
         Title="Roster" Height="400" Width="700">
-    <Grid>
+    <Grid x:Name="RosterGrid">
         <TextBox TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
         <Label Content="Characters" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
