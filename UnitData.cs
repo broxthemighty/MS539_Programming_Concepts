@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WH40K_GUI_UAT_MS539_ML
 {
-    internal class UnitData
+    public class UnitData
     {
         private string _unitName;
         private string _unitType;
@@ -49,5 +49,18 @@ namespace WH40K_GUI_UAT_MS539_ML
             _unitFeelNoPain = unitFeelNoPain;
             _unitModelCount = unitModelCount;
         }
+
+        public string GetUnitName() { return _unitName; }
+        public string GetUnitType() { return _unitType; }
+        public string GetUnitMovement() { return _unitMovement; }
+        public string GetUnitToughness() {  return _unitToughness; }
+        public string GetUnitWounds() {  return _unitWounds; }
+        public string GetUnitSave() { return _unitSave; }
+        public string GetUnitLeadership() { return _unitLeadership; }
+        public string GetUnitObjectiveControl() { return _unitObjectiveControl; }
+        public string GetUnitInvulnerableSave() {  return _unitInvulnerableSave; }
+        public string GetUnitFeelNoPain() {  return _unitFeelNoPain; }
+        public string GetUnitModelCount() { return _unitModelCount; }
+
     }
 }

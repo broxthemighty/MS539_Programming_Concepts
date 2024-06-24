@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="Roster" Height="400" Width="700">
     <Grid x:Name="RosterGrid">
-        <TextBox TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="rosterNameTxtBx" TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="legendsChkBx" Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
         <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
         <Label Content="Characters" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-        <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
-        <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
-
+        <TextBox x:Name="characterTxtBx" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="600" Height="40"/>
+        <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="battleLineTxtBx" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
+        <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="dedicatedTransportTxtBx" HorizontalAlignment="Left" Margin="10,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
+        <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="otherDatasheetsTxtBx" HorizontalAlignment="Left" Margin="10,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
+        <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="alliedUnitsTxtBx" HorizontalAlignment="Left" Margin="10,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
     </Grid>
 </Window>

@@ -21,6 +21,8 @@ namespace WH40K_GUI_UAT_MS539_ML
     //Need to have an X to remove a unit from the roster, with a popup stating the unit name and verifying the user wants to delete it
     public partial class Roster : Window
     {
+        List<UnitData> rUD = new List<UnitData>();
+
         public Roster()
         {
             InitializeComponent();
@@ -28,8 +30,52 @@ namespace WH40K_GUI_UAT_MS539_ML
 
         private void addUnitBtn_Click(object sender, EventArgs e)
         {
-            Unit un = new Unit();
+            this.Close();
+            Unit un = new Unit(rUD);
             un.ShowDialog();
+        }
+
+        public void SetRosterUnitData(List<UnitData> lUD)
+        {
+            rUD = lUD;
+            UpdateUnitDataText();
+        }
+
+        public void UpdateUnitDataText()
+        {
+            foreach (UnitData x in rUD)
+            {
+                if(x.GetUnitType().Contains("Leader"))
+                {
+                    characterTxtBx.Text = characterTxtBx.Text.ToString() +
+                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";  
+                    characterTxtBx.Refresh();
+                }
+                else if (x.GetUnitType().Contains("BattleLine"))
+                {
+                    battleLineTxtBx.Text = battleLineTxtBx.Text.ToString() +
+                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                    battleLineTxtBx.Refresh();
+                }
+                else if (x.GetUnitType().Contains("Dedicated"))
+                {
+                    dedicatedTransportTxtBx.Text = dedicatedTransportTxtBx.Text.ToString() +
+                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                    dedicatedTransportTxtBx.Refresh();
+                }
+                else if (x.GetUnitType().Contains("Other"))
+                {
+                    otherDatasheetsTxtBx.Text = otherDatasheetsTxtBx.Text.ToString() +
+                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                    otherDatasheetsTxtBx.Refresh();
+                }
+                else if (x.GetUnitType().Contains("Allied"))
+                {
+                    alliedUnitsTxtBx.Text = alliedUnitsTxtBx.Text.ToString() +
+                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                    alliedUnitsTxtBx.Refresh();
+                }
+            }
         }
     }
 }

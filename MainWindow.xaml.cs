@@ -20,6 +20,7 @@ namespace WH40K_GUI_UAT_MS539_ML
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();

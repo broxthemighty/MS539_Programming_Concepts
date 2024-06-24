@@ -24,10 +24,10 @@ namespace WH40K_GUI_UAT_MS539_ML
 
         string errorMessage = "The maximum amount of that unit in the roster has been reached.";
         public string unitName = "";
-        List<UnitData> ud = new List<UnitData>();
         List<string> unitCount = new List<string>();
+        List<UnitData> ud = new List<UnitData>();
 
-        public Unit()
+        public Unit(List<UnitData> cUD)
         {
             InitializeComponent();
 
@@ -42,7 +42,8 @@ namespace WH40K_GUI_UAT_MS539_ML
             {
                 UnitList.ItemsSource = dummyData;
             }
-            
+
+            ud = cUD;
         }
 
         private void updateUnitWargear(string unitName)
@@ -194,9 +195,9 @@ namespace WH40K_GUI_UAT_MS539_ML
                 );
 
             int count = 0;
-                foreach (string n in unitCount)
+                foreach (UnitData n in ud)
                 {
-                    if (n == unitDisplayName.Text.ToString())
+                    if (n.GetUnitName() == unitDisplayName.Text.ToString())
                     {
                         count++;
                     }
@@ -230,6 +231,13 @@ namespace WH40K_GUI_UAT_MS539_ML
         {
             updateUnitWargear(UnitList.SelectedItem.ToString());
             updateUnitStats(UnitList.SelectedItem.ToString());
+        }
+
+        private void UnitWindow_Closing(object sender, CancelEventArgs e) 
+        {
+            Roster rs = new Roster();
+            rs.SetRosterUnitData(ud);
+            rs.ShowDialog();
         }
     }
 }
