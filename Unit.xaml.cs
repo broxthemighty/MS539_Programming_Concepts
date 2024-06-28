@@ -25,9 +25,29 @@ namespace WH40K_GUI_UAT_MS539_ML
         string errorMessage = "The maximum amount of that unit in the roster has been reached.";
         public string unitName = "";
         List<string> unitCount = new List<string>();
-        List<UnitData> ud = new List<UnitData>();
+        //List<UnitData> ud = new List<UnitData>();
+        Dictionary<string, UnitData> uDict = new Dictionary<string, UnitData>();
 
-        public Unit(List<UnitData> cUD)
+        //public Unit(List<UnitData> cUD)
+        //{
+        //    InitializeComponent();
+
+        //    List<string> dummyData = new List<string>();
+        //    dummyData.Add("Captain");
+        //    dummyData.Add("Apothecary");
+        //    dummyData.Add("Intercessors");
+        //    dummyData.Add("Bladeguard");
+        //    dummyData.Add("Gladiator Lancer");
+
+        //    if (dummyData.Count > 0)
+        //    {
+        //        UnitList.ItemsSource = dummyData;
+        //    }
+
+        //    ud = cUD;
+        //}
+
+        public Unit(Dictionary<string, UnitData> cDict)
         {
             InitializeComponent();
 
@@ -43,7 +63,7 @@ namespace WH40K_GUI_UAT_MS539_ML
                 UnitList.ItemsSource = dummyData;
             }
 
-            ud = cUD;
+            uDict = cDict;
         }
 
         private void updateUnitWargear(string unitName)
@@ -195,29 +215,29 @@ namespace WH40K_GUI_UAT_MS539_ML
                 );
 
             int count = 0;
-                foreach (UnitData n in ud)
+            foreach (KeyValuePair<string, UnitData> y in uDict)
+            {
+                if (y.Value.GetUnitName() == unitDisplayName.Text.ToString())
                 {
-                    if (n.GetUnitName() == unitDisplayName.Text.ToString())
-                    {
-                        count++;
-                    }
+                    count++;
                 }
+            }
 
                 if (unitType.Content.ToString().Contains("BattleLine") & (count < 6))
                 {
                     unitCount.Add(unitDisplayName.Text.ToString());
-                    ud.Add(singleUnit);
+                    uDict.Add(unitDisplayName.Text.ToString()+count.ToString(), singleUnit);
                 }
                 else if (count < 3)
                 {
                     unitCount.Add(unitDisplayName.Text.ToString());
-                    ud.Add(singleUnit);
+                    uDict.Add(unitDisplayName.Text.ToString()+count.ToString(), singleUnit);
                 }
                 else
                 {
                     MessageBox.Show(errorMessage);
                 }
-            
+
             
         }
 
@@ -233,11 +253,20 @@ namespace WH40K_GUI_UAT_MS539_ML
             updateUnitStats(UnitList.SelectedItem.ToString());
         }
 
-        private void UnitWindow_Closing(object sender, CancelEventArgs e) 
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Roster rs = new Roster();
-            rs.SetRosterUnitData(ud);
-            rs.ShowDialog();
+            this.Close();
+
+            //Roster rs = new Roster();
+            //rs.SetRosterUnitData(ud);
+            //rs.ShowDialog();
+
+            Roster rD = new Roster();
+            rD.SetRosterUnitData(uDict);
+            rD.UpdateUnitDataText();
+            rD.ShowDialog();
+
+            Close();
         }
     }
 }

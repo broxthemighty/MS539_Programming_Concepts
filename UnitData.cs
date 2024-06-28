@@ -50,6 +50,12 @@ namespace WH40K_GUI_UAT_MS539_ML
             _unitModelCount = unitModelCount;
         }
 
+        public string StripNumberOffEndOfName(string unitName)
+        {
+            string returnString = unitName.Remove(unitName.Length - 1, 1);
+            return returnString;
+        }
+
         public string GetUnitName() { return _unitName; }
         public string GetUnitType() { return _unitType; }
         public string GetUnitMovement() { return _unitMovement; }

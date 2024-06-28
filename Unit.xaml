@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
-        Closing="UnitWindow_Closing"
         mc:Ignorable="d"
         Title="Unit" Height="380" Width="600">
     <Grid>
         <Menu x:Name="UnitGrid">
             <TextBox TextWrapping="Wrap" Text="" Width="130" x:Name="unitDisplayName"/>
             <Button x:Name="addUnitBtn" Content="Add Unit" Click="addUnitBtn_Click"/>
-            <Button Content="Random Unit" x:Name="randomizerBtn" Click="randomizerBtn_Click"/>
+            <Button Content="Random Unit" x:Name="randomizerBtn" Click="randomizerBtn_Click" Visibility="Hidden"/>
+            <Button Content="Close Window" x:Name="closeBtn" Click="closeBtn_Click"/>
         </Menu>
         <ListBox x:Name="UnitList" Margin="430,10,10,0" VerticalAlignment="Top" Height="150" SelectionChanged="UnitList_SelectionChanged"></ListBox>
         <Label Content="M" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
@@ -48,6 +48,6 @@
 
         <Label Content="Unit Composition" HorizontalAlignment="Left" Margin="12,300,0,0" VerticalAlignment="Top"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="110,300,0,0" VerticalAlignment="Top" Name="unitModelCount"/>
-        <Label Content="0" x:Name="randomizerLbl" HorizontalAlignment="Left" Margin="290,-2,0,0" VerticalAlignment="Top"/>
+        <Label Content="0" x:Name="randomizerLbl" HorizontalAlignment="Left" Margin="290,-2,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
     </Grid>
 </Window>

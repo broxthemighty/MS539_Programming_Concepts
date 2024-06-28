@@ -11,7 +11,7 @@
         <CheckBox x:Name="legendsChkBx" Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
         <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
         <Label Content="Characters" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="characterTxtBx" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="Placeholder" VerticalAlignment="Top" Width="600" Height="40"/>
+        <TextBox x:Name="characterTxtBx" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
         <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="battleLineTxtBx" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
         <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>

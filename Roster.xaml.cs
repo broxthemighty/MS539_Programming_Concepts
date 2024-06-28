@@ -21,7 +21,8 @@ namespace WH40K_GUI_UAT_MS539_ML
     //Need to have an X to remove a unit from the roster, with a popup stating the unit name and verifying the user wants to delete it
     public partial class Roster : Window
     {
-        List<UnitData> rUD = new List<UnitData>();
+        //List<UnitData> rUD = new List<UnitData>();
+        Dictionary<string, UnitData> ros = new Dictionary<string, UnitData>();
 
         public Roster()
         {
@@ -31,48 +32,56 @@ namespace WH40K_GUI_UAT_MS539_ML
         private void addUnitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Unit un = new Unit(rUD);
+            Dictionary<string, UnitData> rDict = new Dictionary<string, UnitData>();
+            Unit un = new Unit(rDict);
+            //Unit un = new Unit(rUD);
             un.ShowDialog();
         }
 
-        public void SetRosterUnitData(List<UnitData> lUD)
+        //public void SetRosterUnitData(List<UnitData> lUD)
+        //{
+        //    rUD = lUD;
+        //    UpdateUnitDataText();
+        //}
+
+        public void SetRosterUnitData(Dictionary<string, UnitData> rDict)
         {
-            rUD = lUD;
-            UpdateUnitDataText();
+            ros = rDict;
         }
 
         public void UpdateUnitDataText()
         {
-            foreach (UnitData x in rUD)
+            //foreach (UnitData x in rUD)
+            foreach (KeyValuePair<string, UnitData> y in ros)
             {
-                if(x.GetUnitType().Contains("Leader"))
+                if(y.Value.GetUnitType().Contains("Leader"))
                 {
                     characterTxtBx.Text = characterTxtBx.Text.ToString() +
-                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";  
+                        y.Value.GetUnitName() + " M T W Sv LD OC INV FNP /n";  
                     characterTxtBx.Refresh();
                 }
-                else if (x.GetUnitType().Contains("BattleLine"))
+                else if (y.Value.GetUnitType().Contains("BattleLine"))
                 {
                     battleLineTxtBx.Text = battleLineTxtBx.Text.ToString() +
-                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                        y.Value.GetUnitName() + " M T W Sv LD OC INV FNP /n";
                     battleLineTxtBx.Refresh();
                 }
-                else if (x.GetUnitType().Contains("Dedicated"))
+                else if (y.Value.GetUnitType().Contains("Dedicated"))
                 {
                     dedicatedTransportTxtBx.Text = dedicatedTransportTxtBx.Text.ToString() +
-                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                        y.Value.GetUnitName() + " M T W Sv LD OC INV FNP /n";
                     dedicatedTransportTxtBx.Refresh();
                 }
-                else if (x.GetUnitType().Contains("Other"))
+                else if (y.Value.GetUnitType().Contains("Other"))
                 {
                     otherDatasheetsTxtBx.Text = otherDatasheetsTxtBx.Text.ToString() +
-                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                        y.Value.GetUnitName() + " M T W Sv LD OC INV FNP /n";
                     otherDatasheetsTxtBx.Refresh();
                 }
-                else if (x.GetUnitType().Contains("Allied"))
+                else if (y.Value.GetUnitType().Contains("Allied"))
                 {
                     alliedUnitsTxtBx.Text = alliedUnitsTxtBx.Text.ToString() +
-                        x.GetUnitName() + " M T W Sv LD OC INV FNP /n";
+                        y.Value.GetUnitName() + " M T W Sv LD OC INV FNP /n";
                     alliedUnitsTxtBx.Refresh();
                 }
             }
