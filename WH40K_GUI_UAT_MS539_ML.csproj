@@ -60,7 +60,6 @@
     <Compile Include="ExceptionHandling.xaml.cs">
       <DependentUpon>ExceptionHandling.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RandomNumber.cs" />
     <Compile Include="Roster.xaml.cs">
       <DependentUpon>Roster.xaml</DependentUpon>
     </Compile>

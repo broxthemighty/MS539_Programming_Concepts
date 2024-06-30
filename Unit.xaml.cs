@@ -221,11 +221,26 @@ namespace WH40K_GUI_UAT_MS539_ML
             
         }
 
-        private void randomizerBtn_Click(object sender, RoutedEventArgs e)
-        {
-            RandomNumber rn = new RandomNumber(1, 150);
-            randomizerLbl.Content = rn.getRandomNumber().ToString();
-        }
+        //private string CheckUnitEntryCount(string unitDisplayName, int count)
+        //{
+        //    List<string> unitNames = new List<string>();
+
+        //    foreach (KeyValuePair<string, UnitData> y in uDict)
+        //    {
+        //        if(y.Value.GetUnitName() == unitDisplayName)
+        //        {
+        //            unitNames.Add(y.Key.ToString());
+        //        }
+        //    }
+
+        //    foreach (string x in unitNames)
+        //    {
+        //        if (Convert.ToInt32(x.Last()) == count)
+        //        {
+
+        //        }
+        //    }
+        //}
 
         private void UnitList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

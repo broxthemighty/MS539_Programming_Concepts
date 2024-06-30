@@ -177,7 +177,6 @@ namespace WH40K_GUI_UAT_MS539_ML
             rosterTxtBx.Clear();
             names.Clear();
             keySelected = "";
-            //rosterUnitListBox.ItemsSource = "";
             UpdateUnitDataText();
         }
     }
