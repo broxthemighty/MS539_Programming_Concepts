@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WH40K_GUI_UAT_MS539_ML
 {
@@ -33,10 +35,21 @@ namespace WH40K_GUI_UAT_MS539_ML
             newRoster.ShowDialog();
         }
 
-        private void exceptionHandlingBtn_Click(object sender, RoutedEventArgs e)
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged(string propName)
         {
-            ExceptionHandling eh = new ExceptionHandling();
-            eh.ShowDialog();
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+    }
+}
+public static class ExtensionMethods
+{
+    private static readonly Action EmptyDelegate = delegate { };
+    public static void Refresh(this UIElement uiElement)
+    {
+        uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
     }
 }
