@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
         mc:Ignorable="d"
-        Title="Unit" Height="380" Width="600">
+        Title="Unit" Height="380" Width="600" 
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Menu x:Name="UnitGrid">
             <TextBox TextWrapping="Wrap" Text="" Width="130" x:Name="unitDisplayName"/>
             <Button x:Name="addUnitBtn" Content="Add Unit" Click="addUnitBtn_Click"/>
-            <Button Content="Random Unit" x:Name="randomizerBtn" Click="randomizerBtn_Click" Visibility="Hidden"/>
+            
             <Button Content="Close Window" x:Name="closeBtn" Click="closeBtn_Click"/>
         </Menu>
         <ListBox x:Name="UnitList" Margin="430,10,10,0" VerticalAlignment="Top" Height="150" SelectionChanged="UnitList_SelectionChanged"></ListBox>

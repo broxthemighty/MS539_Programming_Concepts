@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
         mc:Ignorable="d"
-        Title="Roster" Height="600" Width="620">
+        Title="Roster" Height="600" Width="580" 
+        WindowStartupLocation="CenterOwner">
     <Grid x:Name="RosterGrid">
         <TextBox x:Name="rosterNameTxtBx" TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="legendsChkBx" Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
-        <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="480,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
-        <TextBox x:Name="rosterTxtBx" HorizontalAlignment="Left" Margin="10,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="590" Height="530" FontFamily="Courier New" IsEnabled="False"/>
+        <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="410,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
+        <TextBox x:Name="rosterTxtBx" HorizontalAlignment="Left" Margin="10,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390" Height="530" FontFamily="Courier New" IsEnabled="False" VerticalScrollBarVisibility="Visible" IsManipulationEnabled="True" IsReadOnly="True"/>
+        <ListBox x:Name ="rosterUnitListBox" Margin="370,24,0,0" VerticalAlignment="Top" Width="120" Height="300" SelectionChanged="RosterUnitListBox_SelectionChanged"/>
+        <Button x:Name ="removeUnitBtn" Content="Remove Unit" HorizontalAlignment="Left" Margin="410,329,0,0" VerticalAlignment="Top" Click="removeUnitBtn_Click"/>
     </Grid>
 </Window>

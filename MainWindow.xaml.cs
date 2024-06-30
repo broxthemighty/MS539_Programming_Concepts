@@ -29,6 +29,7 @@ namespace WH40K_GUI_UAT_MS539_ML
         private void newRoster_Click(object sender, RoutedEventArgs e)
         {
             Roster newRoster = new Roster();
+            newRoster.Owner = Application.Current.MainWindow;
             newRoster.ShowDialog();
         }
 

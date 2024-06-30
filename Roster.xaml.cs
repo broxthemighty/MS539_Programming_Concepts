@@ -23,6 +23,8 @@ namespace WH40K_GUI_UAT_MS539_ML
     {
         //List<UnitData> rUD = new List<UnitData>();
         Dictionary<string, UnitData> ros = new Dictionary<string, UnitData>();
+        List<string> names = new List<string>();
+        string keySelected = "";
 
         public Roster()
         {
@@ -33,14 +35,9 @@ namespace WH40K_GUI_UAT_MS539_ML
         {
             this.Close();
             Unit un = new Unit(ros);
+            un.Owner = Application.Current.MainWindow;
             un.ShowDialog();
         }
-
-        //public void SetRosterUnitData(List<UnitData> lUD)
-        //{
-        //    rUD = lUD;
-        //    UpdateUnitDataText();
-        //}
 
         public void SetRosterUnitData(Dictionary<string, UnitData> rDict)
         {
@@ -94,6 +91,21 @@ namespace WH40K_GUI_UAT_MS539_ML
                     rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
                 }
             }
+
+            if (ros.Count > 0)
+            {
+                foreach (KeyValuePair<string, UnitData> y in ros)
+                {
+                    names.Add(y.Key);
+                }
+                rosterUnitListBox.ItemsSource = names;
+            }
+            else
+            {
+                rosterUnitListBox.ItemsSource = "";
+            }
+
+            rosterUnitListBox.Items.Refresh();
             rosterTxtBx.Refresh();
         }
 
@@ -145,6 +157,28 @@ namespace WH40K_GUI_UAT_MS539_ML
             string returnS = uS + AddSpaces(finalLen);
 
             return returnS;
+        }
+
+        private void RosterUnitListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((rosterUnitListBox.Items.Count > 0) && (rosterUnitListBox.SelectedItem != null))
+            {
+                keySelected = rosterUnitListBox.SelectedItem.ToString();
+            }
+            else
+            {
+                keySelected = "";
+            }
+        }
+
+        private void removeUnitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ros.Remove(keySelected);
+            rosterTxtBx.Clear();
+            names.Clear();
+            keySelected = "";
+            //rosterUnitListBox.ItemsSource = "";
+            UpdateUnitDataText();
         }
     }
 }

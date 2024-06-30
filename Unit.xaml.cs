@@ -202,7 +202,7 @@ namespace WH40K_GUI_UAT_MS539_ML
                     count++;
                 }
             }
-
+            //Need to change how the naming is handled
                 if (unitType.Content.ToString().Contains("BattleLine") & (count < 6))
                 {
                     unitCount.Add(unitDisplayName.Text.ToString());
@@ -242,6 +242,7 @@ namespace WH40K_GUI_UAT_MS539_ML
             //rs.ShowDialog();
 
             Roster rD = new Roster();
+            rD.Owner = Application.Current.MainWindow;
             rD.SetRosterUnitData(uDict);
             rD.UpdateUnitDataText();
             rD.ShowDialog();
