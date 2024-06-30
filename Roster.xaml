@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WH40K_GUI_UAT_MS539_ML"
         mc:Ignorable="d"
-        Title="Roster" Height="400" Width="700">
+        Title="Roster" Height="600" Width="700">
     <Grid x:Name="RosterGrid">
         <TextBox x:Name="rosterNameTxtBx" TextWrapping="Wrap" Text="RosterName" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="legendsChkBx" Content="Include Legends Units" HorizontalAlignment="Left" Margin="132,2,0,0" VerticalAlignment="Top"/>
         <Button Content="Add Unit To Roster" Width="115" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Click="addUnitBtn_Click"/>
         <Label Content="Characters" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="characterTxtBx" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
-        <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="battleLineTxtBx" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
-        <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="dedicatedTransportTxtBx" HorizontalAlignment="Left" Margin="10,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
-        <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="otherDatasheetsTxtBx" HorizontalAlignment="Left" Margin="10,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
-        <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="alliedUnitsTxtBx" HorizontalAlignment="Left" Margin="10,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="40"/>
+        <TextBox x:Name="characterTxtBx" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="80" FontFamily="Courier New"/>
+        <Label Content="BattleLine" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="battleLineTxtBx" HorizontalAlignment="Left" Margin="10,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="80" FontFamily="Courier New"/>
+        <Label Content="Dedicated Transport" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="dedicatedTransportTxtBx" HorizontalAlignment="Left" Margin="10,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="80" FontFamily="Courier New"/>
+        <Label Content="Other Datasheets" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="otherDatasheetsTxtBx" HorizontalAlignment="Left" Margin="10,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="80" FontFamily="Courier New"/>
+        <Label Content="Allied Units" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="alliedUnitsTxtBx" HorizontalAlignment="Left" Margin="10,444,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="80" FontFamily="Courier New"/>
     </Grid>
 </Window>

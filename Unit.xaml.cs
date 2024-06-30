@@ -25,27 +25,7 @@ namespace WH40K_GUI_UAT_MS539_ML
         string errorMessage = "The maximum amount of that unit in the roster has been reached.";
         public string unitName = "";
         List<string> unitCount = new List<string>();
-        //List<UnitData> ud = new List<UnitData>();
         Dictionary<string, UnitData> uDict = new Dictionary<string, UnitData>();
-
-        //public Unit(List<UnitData> cUD)
-        //{
-        //    InitializeComponent();
-
-        //    List<string> dummyData = new List<string>();
-        //    dummyData.Add("Captain");
-        //    dummyData.Add("Apothecary");
-        //    dummyData.Add("Intercessors");
-        //    dummyData.Add("Bladeguard");
-        //    dummyData.Add("Gladiator Lancer");
-
-        //    if (dummyData.Count > 0)
-        //    {
-        //        UnitList.ItemsSource = dummyData;
-        //    }
-
-        //    ud = cUD;
-        //}
 
         public Unit(Dictionary<string, UnitData> cDict)
         {
