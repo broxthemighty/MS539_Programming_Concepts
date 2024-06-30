@@ -48,37 +48,53 @@ namespace WH40K_GUI_UAT_MS539_ML
         }
 
         public void UpdateUnitDataText()
-        {
-            //foreach (UnitData x in rUD)
-            foreach (KeyValuePair<string, UnitData> y in ros) //maybe modify this to use only one text box, in order to keep formatting
+        {//maybe split the dictionary data into a series of lists, sorted alphabetically, not sure how to do enhancements yet
+            rosterTxtBx.Text = rosterTxtBx.Text.ToString() + "Characters" + "\n" + "-----------------------------------------" + "\n";
+            foreach (KeyValuePair<string, UnitData> y in ros) 
             {
 
-                if(y.Value.GetUnitType().Contains("Leader"))
+                if (y.Value.GetUnitType().Contains("Leader"))
                 {
-                    characterTxtBx.Text = characterTxtBx.Text.ToString() + FormatUnitText(y.Value);
-                    characterTxtBx.Refresh();
-                }
-                else if (y.Value.GetUnitType().Contains("BattleLine"))
-                {
-                    battleLineTxtBx.Text = battleLineTxtBx.Text.ToString() + FormatUnitText(y.Value);
-                    battleLineTxtBx.Refresh();
-                }
-                else if (y.Value.GetUnitType().Contains("Dedicated"))
-                {
-                    dedicatedTransportTxtBx.Text = dedicatedTransportTxtBx.Text.ToString() + FormatUnitText(y.Value);
-                    dedicatedTransportTxtBx.Refresh();
-                }
-                else if (y.Value.GetUnitType().Contains("Other"))
-                {
-                    otherDatasheetsTxtBx.Text = otherDatasheetsTxtBx.Text.ToString() + FormatUnitText(y.Value);
-                    otherDatasheetsTxtBx.Refresh();
-                }
-                else if (y.Value.GetUnitType().Contains("Allied"))
-                {
-                    alliedUnitsTxtBx.Text = alliedUnitsTxtBx.Text.ToString() + FormatUnitText(y.Value);
-                    alliedUnitsTxtBx.Refresh();
+                    rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
                 }
             }
+
+            rosterTxtBx.Text = rosterTxtBx.Text.ToString() + "Battle Line" + "\n" + "-----------------------------------------" + "\n";
+            foreach (KeyValuePair<string, UnitData> y in ros) 
+            {
+                if (y.Value.GetUnitType().Contains("BattleLine"))
+                {
+                    rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
+                }
+            }
+
+            rosterTxtBx.Text = rosterTxtBx.Text.ToString() + "Dedicated Transports" + "\n" + "-----------------------------------------" + "\n";
+            foreach (KeyValuePair<string, UnitData> y in ros) 
+            {
+                if (y.Value.GetUnitType().Contains("Dedicated"))
+                {
+                    rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
+                }
+            }
+
+            rosterTxtBx.Text = rosterTxtBx.Text.ToString() + "Other Units" + "\n" + "-----------------------------------------" + "\n";
+            foreach (KeyValuePair<string, UnitData> y in ros)
+            {
+                if (y.Value.GetUnitType().Contains("Other"))
+                {
+                    rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
+                }
+            }
+
+            rosterTxtBx.Text = rosterTxtBx.Text.ToString() + "Allied Units" + "\n" + "-----------------------------------------" + "\n";
+            foreach (KeyValuePair<string, UnitData> y in ros) 
+            {
+                if (y.Value.GetUnitType().Contains("Allied"))
+                {
+                    rosterTxtBx.Text = rosterTxtBx.Text.ToString() + FormatUnitText(y.Value);
+                }
+            }
+            rosterTxtBx.Refresh();
         }
 
         public string FormatUnitText(UnitData ud)
