@@ -252,10 +252,6 @@ namespace WH40K_GUI_UAT_MS539_ML
         {
             this.Close();
 
-            //Roster rs = new Roster();
-            //rs.SetRosterUnitData(ud);
-            //rs.ShowDialog();
-
             Roster rD = new Roster();
             rD.Owner = Application.Current.MainWindow;
             rD.SetRosterUnitData(uDict);

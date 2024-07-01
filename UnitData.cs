@@ -22,17 +22,6 @@ namespace WH40K_GUI_UAT_MS539_ML
 
         public UnitData()
         {
-            //string unitName;
-            //string unitType;
-            //string unitMovement;
-            //string unitToughness;
-            //string unitWounds;
-            //string unitSave;
-            //string unitLeadership;
-            //string unitObjectiveControl;
-            //string unitInvulnerableSave;
-            //string unitFeelNoPain;
-            //string unitModelCount;
         }
 
         public UnitData(string unitName, string unitType, string unitMovement, string unitToughness, string unitWounds, string unitSave, string unitLeadership, string unitObjectiveControl, string unitInvulnerableSave, string unitFeelNoPain, string unitModelCount)

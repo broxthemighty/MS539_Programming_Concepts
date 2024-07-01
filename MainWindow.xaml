@@ -19,7 +19,7 @@
             <MenuItem Header="Help">
                 <!--Include link to documentation, maybe post something online if I publish this app-->
             </MenuItem>
-            <Button Content="Exception Handling" Name="exceptionHandlingBtn" Click="exceptionHandlingBtn_Click" Visibility="Hidden"/>
+            
         </Menu>
         
 
